@@ -1,6 +1,8 @@
-# DelphiDX12
-DirectX 12 Headers for Delphi and FPC
-based on SDK 10.0.17763.0 SDK Oct 2018
+# FPCDX12
+DirectX 12 Headers for Freepascal
+
+Tested and compatible with latest FPC snapshot compiler 3.3.1 in 2025.
+Based on Microsoft SDK headers from Oct 2018
 
 The files are available under Apache License, Version 2.0.
 You may obtain a copy of the License at
