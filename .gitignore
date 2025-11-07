@@ -2,6 +2,8 @@
 *.o
 *.ppu
 *.a
+*.exe
+*.or
 
 # Windows image file caches
 Thumbs.db
