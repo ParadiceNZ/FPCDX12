@@ -81,7 +81,9 @@ end;
 
 function TRingBuffer.GetLast: LONGLONG;
 begin
+    {$push hints}{$hints off}
     Result := FElements[(FStart + FCount - 1) mod FMaxElements];
+    {$pop hints}
 end;
 
 

@@ -275,7 +275,7 @@ var
 begin
     // We use a ring buffer to store the clock time for the last 10 frames.
     // This lets us eliminate a lot of noise when computing framerate.
-    //ZeroMemory(@time,Sizeof(Time));
+    ZeroMemory(@time,Sizeof(Time));
     QueryPerformanceCounter(time);
     m_times.Add(time);
 
@@ -558,8 +558,6 @@ var
     translationOffset: single;
     scaleMultiplier: single;
     size: TD2D1_SIZE_F;
-    hw : hwnd;
-
 begin
     // calculate a 't' value that will linearly interpolate from 0 to 1 and back every 20 seconds
     currentTime := GetTickCount64();
@@ -687,7 +685,9 @@ var
 begin
 	if umessage = WM_NCCREATE then begin
 		// TDemoApp.Self instance is stashed in CreateParams; move this to GWLP_USERDATA
+      {$push hints}{$hints off}
 		CreateParams 	:= LPCREATESTRUCT(lPara);
+      {$pop hints}
 		Instance 		:= TDemoApp(CreateParams^.lpCreateParams);
 		SetWindowLongPtr(Handle,GWLP_USERDATA,PtrInt(Instance));
 	end else
